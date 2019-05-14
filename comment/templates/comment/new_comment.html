@@ -1,0 +1,19 @@
+<html>
+<head>
+    <title> Website commenting tool </title>
+</head>
+<body>
+    <form action="" method="post">
+      {% csrf_token %}
+      <h1>New comment</h1>
+      <br>
+      <iframe src = {{ url.page_url }} height=50% width="50%" > </iframe>
+      <br>
+      {{form.author}}
+      <input id="send" type="submit" value="Done">
+      <br>
+      {{form.text}}
+      <br>
+    </form>
+</body>
+</html>

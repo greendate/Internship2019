@@ -1,0 +1,21 @@
+<html>
+<head>
+    <title> Website commenting tool </title>
+</head>
+<body>
+    <h1>Website commenting tool</h1>
+    <br>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ url.site_url }}
+        <input type="submit" value="Submit">
+        <br>
+    </form>
+    {% for comment in comments %}
+        <hr>
+        <p> username: {{ comment.author }} </p>
+        <iframe src = {{ comment.page_url }} height=30% width="30%" > </iframe>
+        opinion: {{ comment.text }}
+    {% endfor %}
+</body>
+</html>
