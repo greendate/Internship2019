@@ -21,8 +21,8 @@ class URLModelForm(ModelForm):
     class Meta:
         model = URL
         fields = ['site_url']
-        
+
         widgets = {
             'site_url': TextInput(
-                attrs={'id': 'requested_url', 'placeholder': 'Enter the URL of site you want to comment..'}),
+                attrs={'id': 'requested_url', 'placeholder': 'Enter the URL of site..'}),
         }

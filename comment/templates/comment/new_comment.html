@@ -1,19 +1,24 @@
+{% load static %}
 <html>
 <head>
-    <title> Website commenting tool </title>
+    <title> Website Commenting Tool</title>
+    <link rel="stylesheet" href="{% static 'css/comment.css' %}">
 </head>
 <body>
     <form action="" method="post">
       {% csrf_token %}
-      <h1>New comment</h1>
+      <h1>New Commnent</h1>
       <br>
       <iframe src = {{ url.page_url }} height=50% width="50%" > </iframe>
       <br>
-      {{form.author}}
-      <input id="send" type="submit" value="Done">
+      <div class="text-field">
+        {{form.text}}
+      </div>
       <br>
-      {{form.text}}
-      <br>
+      <div class="username">
+        {{form.author}}
+        <input id="send" type="submit" value="Done">
+      </div>
     </form>
 </body>
 </html>

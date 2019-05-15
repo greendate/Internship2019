@@ -1,9 +1,11 @@
+{% load static %}
 <html>
 <head>
-    <title> Website commenting tool </title>
+    <title> Website Commenting Tool </title>
+    <link rel="stylesheet" href="{% static 'css/comment.css' %}">
 </head>
 <body>
-    <h1>Website commenting tool</h1>
+    <h1> Website Commenting Tool </h1>
     <br>
     <form action="" method="post">
         {% csrf_token %}
@@ -12,10 +14,21 @@
         <br>
     </form>
     {% for comment in comments %}
-        <hr>
-        <p> username: {{ comment.author }} </p>
+    <hr>
         <iframe src = {{ comment.page_url }} height=30% width="30%" > </iframe>
-        opinion: {{ comment.text }}
+         <div class="container">
+          <div class="dialogbox">
+            <div class="body">
+              <span class="tip tip-up"></span>
+              {{ comment.author }}
+              <hr>
+              <div class="message">
+                <span> {{ comment.text }} </span>
+              </div>
+            </div>
+          </div>
+        </div>
     {% endfor %}
+    <hr>
 </body>
 </html>
