@@ -1,0 +1,42 @@
+{% load static %}
+<html>
+<head>
+    <title> Website Commenting Tool</title>
+    <link rel="stylesheet" href="{% static 'css/comment.css' %}">
+</head>
+<body>
+      <h1> Comment {{ comment.id }} </h1>
+      <br>
+      <div>
+         <iframe src = {{ comment.page_url }} height=50% width=50% id="myframe"> </iframe>
+      </div>
+      <br>
+      <div>
+        highlighted: {{comment.highlighted}}
+      </div>
+      <div>
+        {{comment.text}}
+      </div>
+      <br>
+      <div>
+        {{comment.author}}
+      </div>
+      <hr>
+      <div class="leave-reply">
+        <form action="" method="post">
+          {% csrf_token %}
+          {{ form.text }}
+          {{ form.author }}
+          <input type="submit" value="Leave reply..">
+        </form>
+      </div>
+      <hr>
+      <div>
+        {% for reply in replies %}
+            <p> reply: {{ reply.text }} </p>
+            <p> user: {{ reply.author }} </p>
+            <hr>
+        {% endfor %}
+      </div>
+</body>
+</html>

@@ -15,6 +15,7 @@
     </form>
     {% for comment in comments %}
     <hr>
+        <form action="" method="get">
         <iframe src = {{ comment.page_url }} height=30% width="30%" > </iframe>
          <div class="container">
           <div class="dialogbox">
@@ -23,11 +24,21 @@
               {{ comment.author }}
               <hr>
               <div class="message">
-                <span> {{ comment.text }} </span>
+                <span>
+                  {{ comment.text }}
+                  <br>
+                  <br>
+                </span>
+                <span>
+                  <a target="_blank" rel="noopener noreferrer" href = "{% url 'comment' identify=comment.id %}">
+                    Check comment
+                  </a>
+                </span>
               </div>
             </div>
           </div>
         </div>
+        </form>
     {% endfor %}
     <hr>
 </body>

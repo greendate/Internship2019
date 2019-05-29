@@ -8,6 +8,11 @@ body {
   text-align: center;
 }
 
+mark {
+	 background: orange;
+	 color: black;
+}
+
 .tip {
   width: 0px;
   height: 0px;
@@ -50,6 +55,11 @@ body {
 
 hr {
   width: 50%;
+}
+
+.leave-reply textarea {
+  width: 30%;
+  height: 3%;
 }
 
 input[type=submit] {
