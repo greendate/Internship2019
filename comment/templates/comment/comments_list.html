@@ -63,12 +63,12 @@
         <input class="url-submit" type="submit" value="Submit">
         <br>
     </form>
+<div class="all-recent-comments">
+    <h2 class="recent-comments-title">Recent comments:</h2>
 
     {% for comment in comments %}
 
-    <div class="all-recent-comments">
 
-    <h2 class="recent-comments-title">Recent comments:</h2>
 
     <form class="comment-div" action="" method="get">
         <iframe src = {{ comment.page_url }} height=30% width="30%" > </iframe>
