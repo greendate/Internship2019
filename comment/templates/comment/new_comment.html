@@ -5,23 +5,39 @@
     <link rel="stylesheet" href="{% static 'css/comment.css' %}">
 </head>
 <body>
-    <form action="" method="post">
-      {% csrf_token %}
-      <h1>New Commnent</h1>
-      <br>
-      <iframe src = {{ url.page_url }} height=50% width="50%" > </iframe>
-      <br>
-      <div class="text-field">
-        {{form.highlighted}}
+
+      <h1 class="page-title">New comment</h1>
+
+      <div class="content-area">
+
+      <div class="comment-page-body">
+        <iframe src = {{ url.page_url }} height=50% width="50%" > </iframe>
+
+        <div class="leave-comment-area">
+
+          <div class="highlighted add-new-comment-title">
+                Add new comment:
+          </div>
+
+          <div class="leave-reply">
+            <form action="" method="post">
+              {% csrf_token %}
+            <br>
+            <div class="text-field">
+              {{form.highlighted}}
+            </div>
+            <div class="text-field">
+              {{form.text}}
+            </div>
+            <br>
+            <div class="username">
+              {{form.author}}
+              <input id="send" type="submit" value="Done">
+            </div>
+          </form>
+        </div>
       </div>
-      <div class="text-field">
-        {{form.text}}
-      </div>
-      <br>
-      <div class="username">
-        {{form.author}}
-        <input id="send" type="submit" value="Done">
-      </div>
-    </form>
+    </div>
+  </div>
 </body>
 </html>

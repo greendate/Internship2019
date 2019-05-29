@@ -1,3 +1,4 @@
+<!--
 {% load static %}
 <html>
 <head>
@@ -41,5 +42,54 @@
         </form>
     {% endfor %}
     <hr>
+</body>
+</html>
+-->
+{% load static %}
+<html>
+<head>
+    <title>Tool for commenting web pages</title>
+    <link rel="stylesheet" href="{% static 'css/comment.css' %}">
+</head>
+<body>
+
+    <h1 class="page-title"> Website Commenting Tool </h1>
+
+    <div class="content-area">
+
+    <form class="input-url" action="" method="post">
+        {% csrf_token %}
+        {{ url.site_url }}
+        <input class="url-submit" type="submit" value="Submit">
+        <br>
+    </form>
+
+    {% for comment in comments %}
+
+    <div class="all-recent-comments">
+
+    <h2 class="recent-comments-title">Recent comments:</h2>
+
+    <form class="comment-div" action="" method="get">
+        <iframe src = {{ comment.page_url }} height=30% width="30%" > </iframe>
+        <div class="container">
+            <div class="dialogbox">
+                <div class="comment-body">
+                    <span class="tip tip-up"></span>
+                    <p class="comment-name">{{ comment.author }}</p>
+                    <div class="comment-message">
+                        {{ comment.text }}
+                    </div>
+                    <a class="check-comment-button" target="_blank" rel="noopener noreferrer" href = "{% url 'comment' identify=comment.id %}">
+                        Check comment
+                    </a>
+                    </div>
+                </div>
+            </div>
+    </form>
+    {% endfor %}
+        </div>
+    </div>
+
 </body>
 </html>
