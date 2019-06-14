@@ -6,11 +6,11 @@ from django.utils.translation import ugettext_lazy
 class CommentModelForm(ModelForm):
     class Meta:
         model = Comment
-        fields = ['author', 'text', 'highlighted', 'page_url']
+        fields = ['author', 'email', 'text', 'highlighted', 'page_url']
 
         widgets = {
-            'author': TextInput(
-                attrs={'id': 'input_username', 'placeholder': 'username'}),
+            'author': TextInput(attrs={'id': 'input_username', 'placeholder': 'username'}),
+            'email': EmailInput(attrs={'id': 'input_email', 'placeholder': 'Enter your e-mail here'}),
             'text': Textarea(attrs={'id': 'message', 'placeholder': 'Add your comments here..'}),
             'highlighted': Textarea(attrs={'id': 'part', 'placeholder': 'Paste here text you want to highlight..'}),
             'page_url': TextInput(
@@ -32,10 +32,10 @@ class URLModelForm(ModelForm):
 class ReplyModelForm(ModelForm):
     class Meta:
         model = Reply
-        fields = ['author', 'text']
+        fields = ['author', 'email', 'text']
 
         widgets = {
-            'author': TextInput(
-                attrs={'id': 'input_username', 'placeholder': 'nickname'}),
+            'author': TextInput(attrs={'id': 'input_username', 'placeholder': 'nickname'}),
+            'email': EmailInput(attrs={'id': 'input_email', 'placeholder': 'Enter your e-mail here'}),
             'text': Textarea(attrs={'id': 'message', 'placeholder': 'Leave your reply here..'}),
         }

@@ -6,32 +6,34 @@
 </head>
 <body>
 
-      <h1 class="page-title">New comment</h1>
+      <h1 class="our-site page-title">New comment</h1>
 
-      <div class="content-area">
+      <div class="our-site content-area">
 
-      <div class="comment-page-body">
+      <div class="our-site comment-page-body">
+
         <iframe src = {{ url.page_url }} height=50% width="50%" > </iframe>
 
-        <div class="leave-comment-area">
+        <div class="our-site leave-comment-area">
 
-          <div class="highlighted add-new-comment-title">
+          <div class="our-site highlighted add-new-comment-title">
                 Add new comment:
           </div>
 
-          <div class="leave-reply">
+          <div class="our-site leave-reply">
             <form action="" method="post">
               {% csrf_token %}
             <br>
-            <div class="text-field">
+            <div class="our-site text-field">
               {{form.highlighted}}
             </div>
-            <div class="text-field">
+            <div class="our-site text-field">
               {{form.text}}
             </div>
             <br>
-            <div class="username">
-              {{form.author}}
+            <div class="our-site username">
+              {{ form.author }}
+              {{ form.email }}
               <input id="send" type="submit" value="Done">
             </div>
           </form>

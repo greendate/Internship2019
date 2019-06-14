@@ -1,7 +1,7 @@
 from django.shortcuts import render, HttpResponseRedirect, redirect, HttpResponse
 from .models import Comment, URL, Reply
 from .forms import CommentModelForm, URLModelForm, ReplyModelForm
-
+import smtplib, ssl
 
 def comments_list(request):
     if request.method == 'POST':
@@ -25,6 +25,7 @@ def new_comment(request):
         form = CommentModelForm(request.POST)
 
         comment_inst.author = form.data['author']
+        comment_inst.email = form.data['email']
         comment_inst.text = form.data['text']
         comment_inst.highlighted = form.data['highlighted']
         comment_inst.page_url = url
@@ -46,9 +47,41 @@ def comment(request, identify):
     comment = Comment.objects.get(pk=identify)
     if request.method == 'POST':
 
+        relevant_emails = set()
+        comment_email = Comment.objects.get(pk=identify)
+        replies_email = Reply.objects.filter(comment_id=identify)
+        # print(comment_email.email)
+        relevant_emails.add(comment_email.email)
+        for reply_email in replies_email:
+            # print(reply_email.email)
+            relevant_emails.add(reply_email.email)
+
+        for mail in relevant_emails:
+            print(mail)
+            port = 465  # For SSL
+            smtp_server = "smtp.gmail.com"
+            sender_email = "commenting.tool@gmail.com"
+            receiver_email = mail
+            password = "Q6N>qTb'ePCL\dA]"
+            message = """\
+            Subject: New activity
+
+            Hello,
+            You have new activity on comment """ + str(identify) + """.
+
+            Regards,
+            Website Commenting Tool Team"""
+
+            context = ssl.create_default_context()
+            with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
+                server.login(sender_email, password)
+                server.sendmail(sender_email, receiver_email, message)
+
+
         form = ReplyModelForm(request.POST)
 
         reply_inst.author = form.data['author']
+        reply_inst.email = form.data['email']
         reply_inst.text = form.data['text']
         reply_inst.comment_id = identify
 

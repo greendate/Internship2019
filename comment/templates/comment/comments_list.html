@@ -1,93 +1,43 @@
-<!--
 {% load static %}
 <html>
 <head>
-    <title> Website Commenting Tool </title>
-    <link rel="stylesheet" href="{% static 'css/comment.css' %}">
-</head>
-<body>
-    <h1> Website Commenting Tool </h1>
-    <br>
-    <form action="" method="post">
-        {% csrf_token %}
-        {{ url.site_url }}
-        <input type="submit" value="Submit">
-        <br>
-    </form>
-    {% for comment in comments %}
-    <hr>
-        <form action="" method="get">
-        <iframe src = {{ comment.page_url }} height=30% width="30%" > </iframe>
-         <div class="container">
-          <div class="dialogbox">
-            <div class="body">
-              <span class="tip tip-up"></span>
-              {{ comment.author }}
-              <hr>
-              <div class="message">
-                <span>
-                  {{ comment.text }}
-                  <br>
-                  <br>
-                </span>
-                <span>
-                  <a target="_blank" rel="noopener noreferrer" href = "{% url 'comment' identify=comment.id %}">
-                    Check comment
-                  </a>
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-        </form>
-    {% endfor %}
-    <hr>
-</body>
-</html>
--->
-{% load static %}
-<html>
-<head>
-    <title>Tool for commenting web pages</title>
+    <title>Website Commenting Tool</title>
     <link rel="stylesheet" href="{% static 'css/comment.css' %}">
 </head>
 <body>
 
-    <h1 class="page-title"> Website Commenting Tool </h1>
+    <h1 class="page-title our-site"> Website Commenting Tool </h1>
 
-    <div class="content-area">
+    <div class="content-area our-site">
 
-    <form class="input-url" action="" method="post">
-        {% csrf_token %}
-        {{ url.site_url }}
-        <input class="url-submit" type="submit" value="Submit">
-        <br>
-    </form>
-<div class="all-recent-comments">
-    <h2 class="recent-comments-title">Recent comments:</h2>
+      <form class="input-url" action="" method="post">
+          {% csrf_token %}
+          {{ url.site_url }}
+          <input class="url-submit" type="submit" value="Submit">
+          <br>
+      </form>
+      <div class="all-recent-comments">
+          <h2 class="recent-comments-title">Recent comments:</h2>
 
-    {% for comment in comments %}
-
-
-
-    <form class="comment-div" action="" method="get">
-        <iframe src = {{ comment.page_url }} height=30% width="30%" > </iframe>
-        <div class="container">
-            <div class="dialogbox">
-                <div class="comment-body">
-                    <span class="tip tip-up"></span>
-                    <p class="comment-name">{{ comment.author }}</p>
-                    <div class="comment-message">
-                        {{ comment.text }}
+          {% for comment in comments %}
+            <form class="comment-div" action="" method="get">
+                <iframe src = {{ comment.page_url }} height=30% width="30%" > </iframe>
+                <div class="container">
+                    <div class="dialogbox">
+                        <div class="comment-body">
+                            <span class="tip tip-up"></span>
+                            <p class="comment-name">{{ comment.author }}</p>
+                            <div class="comment-message">
+                                {{ comment.text }}
+                            </div>
+                            <a class="check-comment-button" target="_blank" rel="noopener noreferrer" href = "{% url 'comment' identify=comment.id %}">
+                                Check comment
+                            </a>
+                            </div>
+                        </div>
                     </div>
-                    <a class="check-comment-button" target="_blank" rel="noopener noreferrer" href = "{% url 'comment' identify=comment.id %}">
-                        Check comment
-                    </a>
-                    </div>
-                </div>
-            </div>
-    </form>
-    {% endfor %}
+            </form>
+          {% endfor %}
         </div>
     </div>
 

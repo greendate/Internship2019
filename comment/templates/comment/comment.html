@@ -1,91 +1,61 @@
-<!--
 {% load static %}
 <html>
 <head>
     <title> Website Commenting Tool</title>
     <link rel="stylesheet" href="{% static 'css/comment.css' %}">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
 </head>
-<body>
-      <h1> Comment {{ comment.id }} </h1>
-      <br>
-      <div>
-         <iframe src = {{ comment.page_url }} height=50% width=50% id="myframe"> </iframe>
-      </div>
-      <br>
-      <div>
-        highlighted: {{comment.highlighted}}
-      </div>
-      <div>
-        {{comment.text}}
-      </div>
-      <br>
-      <div>
-        {{comment.author}}
-      </div>
-      <hr>
-      <div class="leave-reply">
-        <form action="" method="post">
-          {% csrf_token %}
-          {{ form.text }}
-          {{ form.author }}
-          <input type="submit" value="Leave reply..">
-        </form>
-      </div>
-      <hr>
-      <div>
-        {% for reply in replies %}
-            <p> reply: {{ reply.text }} </p>
-            <p> user: {{ reply.author }} </p>
-            <hr>
-        {% endfor %}
-      </div>
-</body>
-</html>
--->
-{% load static %}
-<html>
-<head>
-    <title> Website Commenting Tool</title>
-    <link rel="stylesheet" href="{% static 'css/comment.css' %}">
-</head>
-<body>
-      <h1 class="page-title">Comment</h1>
+<body id="our-site-body">
+      <h1 class="our-site page-title">Comment</h1>
 
-      <div class="content-area">
+      <div class="our-site content-area">
 
-      <div class="comment-page-body">
-         <iframe src = {{ comment.page_url }} height=50% width=50% id="myframe"> </iframe>
-
-          <div class="leave-comment-area">
-                  <div class="highlighted">
-                        Highlighted: <div class="high-text">{{comment.highlighted}}</div>
+      <div class="our-site comment-page-body">
+          <!-- <iframe src = {{ comment.page_url }} height=50% width=50% id = "iframeID"> </iframe> -->
+          <div id="container" style="height: 50px; width: 50%;"></div>
+          <div id="content"></div>
+          <div class="our-site leave-comment-area">
+                  <div class="our-site highlighted">
+                        <button class="our-site" type="button" onClick='findString("{{comment.highlighted}}")'>Show highlighted</button>
+                        <script>
+                          findString = function findText(text) {
+                            window.find(text);
+                          }
+                        </script>
                   </div>
-
-                    <div class="author">
+<div class="comment-info-2">
+                    <div class="our-site author">
                     {{comment.author}}
-                  </div>
+                    </div>
 
-                  <div class="comment-text">
+                  <div class="our-site comment-text">
                     {{comment.text}}
                   </div>
-
-                  <div class="leave-reply">
-                    <form class="leave-reply" action="" method="post">
+</div>
+                  <div class="our-site leave-reply">
+                    <form class="our-site leave-reply" action="" method="post">
                       {% csrf_token %}
                       {{ form.text }}
                       {{ form.author }}
+                      {{ form.email }}
                       <input type="submit" value="Leave reply">
                     </form>
                   </div>
-
-              <div class="all-rep">
+              <div class="our-site all-rep">
                     <br>
-                <h3 class="replies-list-title">Recent replies:</h3>
+                <h3 class="our-site replies-list-title">Recent replies:</h3>
 
                     {% for reply in replies %}
-                      <div class="comment-to-reply marko">
-                        <div class="author">{{ reply.author }}</div>
-                        <div class="comment-text">{{ reply.text }}</div>
+                      <div class="our-site comment-to-reply marko">
+                        <div class="our-site author">{{ reply.author }}</div>
+                        <div class="our-site comment-text">{{ reply.text }}</div>
                       </div>
                     {% endfor %}
               </div>
@@ -93,4 +63,15 @@
     </div>
     </div>
 </body>
+<script>
+$.getJSON(
+  "http://www.whateverorigin.org/get?url=" +
+    encodeURIComponent("{{ comment.page_url }}") +
+    "&callback=?",
+  function(data) {
+    // alert(data.contents);
+    $("#container").html(data.contents);
+  }
+);
+</script>
 </html>

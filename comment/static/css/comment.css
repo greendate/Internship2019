@@ -1,341 +1,308 @@
-/*
-h1 {
- text-align: center;
- color: #555555;
- font-family: fantasy;
-}
-
-body {
-  text-align: center;
-}
-
-mark {
-	 background: orange;
-	 color: black;
-}
-
-.tip {
-  width: 0px;
-  height: 0px;
-  position: absolute;
-  background: transparent;
-  border: 10px solid #ccc;
-}
-
-.tip-up {
-  top: -25px;
-  left: 10px;
-  border-right-color: transparent;
-  border-left-color: transparent;
-  border-top-color: transparent;
-}
-
-.dialogbox .body {
-  position: relative;
-  max-width: 300px;
-  height: auto;
-  margin: 20px 10px;
-  padding: 5px;
-  background-color: #DADADA;
-  border-radius: 3px;
-  border: 5px solid #ccc;
-}
-
-.body .message {
-  min-height: 30px;
-  border-radius: 3px;
-  font-family: Arial;
-  font-size: 14px;
-  line-height: 1.5;
-  color: #797979;
-}
-
-.container {
-  margin-left: 42.5%;
-}
-
-hr {
-  width: 50%;
-}
-
-.leave-reply textarea {
-  width: 30%;
-  height: 3%;
-}
-
-input[type=submit] {
-  background-color: #555555;
-  border-radius: 8px;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 10px;
-}
-
-textarea {
-  width: 50%;
-}
-
-.username {
-  margin-left: 30%;
-}
-*/
 * {
-    font-family: Arial;
+    font-family: Arial !important;
 }
 
-body {
-    margin: 0;
+body#our-site-body {
+    margin: 0 !important;
+    background: white;
 }
 
 .content-area {
-    overflow: hidden;
-    padding: 20px 150px;
+    overflow: hidden !important;
+    padding: 20px 150px !important;
 }
 
-.page-title {
-    padding: 25px 150px;
-    font-size: 50px;
-    color: #fff;
-    background-color: #4CAF50;
-    width: 100%;
-    overflow: hidden;
+.page-title.our-site {
+    padding: 25px 150px !important;
+    font-size: 50px  !important;
+    color: #fff !important;
+    background-color: #4CAF50 !important;
+    width: 100% !important;
+    overflow: hidden !important;
 }
 
 .recent-comments-title {
-    margin: 0;
-    margin-top: 80px;
-    font-size: 30px;
-    /*background-color: #4CAF50;*/
-    border-bottom: 3px solid #4CAF50;
-    color: #4CAF50;
-    width: 99.5%;
-    padding: 3px;
+    margin: 0 !important;
+    margin-top: 80px !important;
+    font-size: 30px  !important;
+    /*background-color: #4CAF50 !important;*/
+    border-bottom: 3px solid #4CAF50 !important;
+    color: #4CAF50 !important;
+    width: 99.5% !important;
+    padding: 3px !important;
 }
 
 .input-url input[type=text] {
-    overflow: hidden;
-    width: 84%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-sizing: border-box;
-    float: left;
-    background-color: #EEEEEE;
-    font-size: 130%;
+    overflow: hidden !important;
+    width: 84% !important;
+    padding: 12px 20px !important;
+    margin: 8px 0 !important;
+    display: inline-block !important;
+    border: 1px solid #ddd !important;
+    border-radius: 4px !important;
+    box-sizing: border-box !important;
+    float: left !important;
+    background-color: #EEEEEE !important;
+    font-size: 30px !important;
 }
 
 .input-url input[type=submit] {
-    overflow: hidden;
-    width: 15%;
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    float: left;
-    margin-left: 1%;
-    font-size: 130%;
+    overflow: hidden !important;
+    width: 15% !important;
+    background-color: #4CAF50 !important;
+    color: white !important;
+    padding: 14px 20px !important;
+    margin: 8px 0 !important;
+    border: none !important;
+    border-radius: 4px !important;
+    cursor: pointer !important;
+    float: left !important;
+    margin-left: 1% !important;
+    font-size: 30px  !important;
+}
+
+button.our-site {
+  overflow: hidden
+  width: 15% !important;
+  background-color: #4CAF50 !important;
+  color: white !important;
+  padding: 14px 20px !important;
+  margin: 8px 0 !important;
+  border: none !important;
+  border-radius: 4px !important;
+  cursor: pointer !important;
+  font-size: 20px  !important;
+}
+
+button:visited,
+button:hover {
+    background-color: #3A9A35 !important;
 }
 
 .input-url input[type=submit]:visited,
 .input-url input[type=submit]:hover {
-    background-color: #3A9A35;
+    background-color: #3A9A35 !important;
 }
 
 .comment-div iframe {
-    border: 0;
-    float: left;
-    overflow: hidden;
-    border-left: 20px solid #4CAF50;
-    width: 30%;
+    border: 0 !important;
+    float: left !important;
+    overflow: hidden !important;
+    border-left: 20px solid #4CAF50 !important;
+    width: 30% !important;
 }
 
 .comment-body {
-    overflow: hidden;
-    padding: 0px 15px;
-    float: left;
-    width: 65%;
+    overflow: hidden !important;
+    padding: 0px 15px !important;
+    float: left !important;
+    width: 65% !important;
 }
 
 .comment-div {
-    width: 100%;
-    /*border-top: 15px solid #4CAF50;*/
-    background-color: #EEE;
-    margin-top: 50px;
-    margin-bottom: 40px;
-    /*border: 1px solid #4CAF50;*/
-    padding: 0;
-    overflow: hidden;
+    width: 100% !important;
+    /*border-top: 15px solid #4CAF50 !important;*/
+    background-color: #EEE !important;
+    margin-top: 50px !important;
+    margin-bottom: 40px !important;
+    /*border: 1px solid #4CAF50 !important;*/
+    padding: 0 !important;
+    overflow: hidden !important;
 }
 
 .comment-name {
-    font-weight: bold;
-    font-size: 28px;
-    color: #4CAF50;
+    font-weight: bold !important;
+    font-size: 28px  !important;
+    color: #4CAF50 !important;
 }
 
 .comment-message {
-    margin-top: -15px;
+    margin-top: -15px !important;
 }
 
 .check-comment-button {
-    overflow: hidden;
-    width: 20%;
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    margin: 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    float: left;
-    font-size: 120%;
-    text-decoration: none;
-    text-align: center;
-    margin-top: 15px;
+    overflow: hidden !important;
+    width: 20% !important;
+    background-color: #4CAF50 !important;
+    color: white !important;
+    padding: 10px 20px !important;
+    margin: 0 !important;
+    border: none !important;
+    border-radius: 4px !important;
+    cursor: pointer !important;
+    float: left !important;
+    font-size: 18px  !important;
+    text-decoration: none !important;
+    text-align: center !important;
+    margin-top: 15px !important;
 }
 
 .check-comment-button:visited,
 .check-comment-button:hover {
-    background-color: #3A9A35;
+    background-color: #3A9A35 !important;
 }
 
-.leave-reply input[type=text] {
-    overflow: hidden;
-    width: 69%;
-    display: inline-block;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-sizing: border-box;
-    float: left;
-    background-color: #FFFFFF;
-    font-size: 120%;
-    padding: 3px 5px;
+.leave-reply input[type=text], input[type=email] {
+    margin-top: 10px !important;
+    overflow: hidden !important;
+    width: 69% !important;
+    display: inline-block !important;
+    border: 1px solid #ddd !important;
+    border-radius: 4px !important;
+    box-sizing: border-box !important;
+    float: left !important;
+    background-color: #FFFFFF !important;
+    font-size: 18px  !important;
+    padding: 3px 5px !important;
 }
 
 .comment-page-body iframe {
-    border: 0;
-    border-left: 20px solid #4CAF50;
-    float: left;
-    overflow: hidden;
-    width: 55%;
+    border: 0 !important;
+    border-left: 20px solid #4CAF50 !important;
+    float: left !important;
+    overflow: hidden !important;
+    width: 55% !important;
 }
 
-.leave-reply input[type=submit] {
-    overflow: hidden;
-    width: 30%;
-    background-color: #4CAF50;
-    color: white;
-    padding: 3px 5px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    float: left;
-    margin-left: 1%;
-    font-size: 120%;
+.leave-reply input[type=submit]{
+    margin-top: 10px !important;
+    overflow: hidden !important;
+    width: 30% !important;
+    background-color: #4CAF50 !important;
+    color: white !important;
+    padding: 3px 5px !important;
+    border: none !important;
+    border-radius: 4px !important;
+    cursor: pointer !important;
+    float: left !important;
+    margin-left: 1% !important;
+    font-size: 18px  !important;
 }
 
 .leave-reply input[type=submit]:visited,
 .leave-reply input[type=submit]:hover {
-    background-color: #3A9A35;
+    background-color: #3A9A35 !important;
 }
 
 .leave-comment-area {
-    float: left;
-    overflow: hidden;
-    padding: 20px;
-    width: 40%;
+    float: left !important;
+    overflow: hidden !important;
+    padding: 20px !important;
+    width: 40% !important;
 }
 
 .highlighted {
-    font-size: 130%;
-    font-weight: bold;
-    color: #4CAF50;
-    margin-bottom: 20px;
+    font-size: 20px  !important;
+    font-weight: bold !important;
+    color: #4CAF50 !important;
+    margin-bottom: 20px !important;
 }
 
 .comment-page-content-area {
-    overflow: hidden;
-    background-color: #EEEEEE;
-    padding: 0;
-    margin-left: 150px;
-    margin-right: 150px;
+    overflow: hidden !important;
+    background-color: #EEEEEE !important;
+    padding: 0 !important;
+    margin-left: 150px !important;
+    margin-right: 150px !important;
 }
 
 .comment-to-reply {
-    overflow: hidden;
-    border-left: 5px solid #4CAF50;
-    margin-bottom: 20px;
-    padding-left: 10px;
+    overflow: hidden !important;
+    border-left: 5px solid #4CAF50 !important;
+    margin-bottom: 20px !important;
+    padding-left: 10px !important;
 }
 
 .author {
-    color: #4CAF50;
-    font-size: 120%;
-    margin-bottom: 7px;
+    color: #4CAF50 !important;
+    font-size: 18px  !important;
+    margin-bottom: 7px  !important;
 }
 
 .comment-text {
-    font-size: 110%;
+    font-size: 18px  !important;
+    margin-bottom: 10px;
+}
+
+#input_username, #input_email, #message {
+  margin-bottom: 3px !important;
+  margin-top: 3px !important;
 }
 
 .leave-reply textarea {
-    font-size: 120%;
-    width: 100%;
-    height: 80px;
-    margin-bottom: 10px;
-    overflow: hidden;
-    display: inline-block;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-sizing: border-box;
-    float: left;
-    background-color: #FFFFFF;
-    padding: 3px 5px;
+    font-size: 18px  !important;
+    width: 100% !important;
+    height: 80px !important;
+    margin-bottom: 10px !important;
+    overflow: hidden !important;
+    display: inline-block !important;
+    border: 1px solid #ddd !important;
+    border-radius: 4px !important;
+    box-sizing: border-box !important;
+    float: left !important;
+    background-color: #FFFFFF !important;
+    padding: 3px 5px !important;
 }
 
 .replies-list-title {
-    overflow: hidden;
-    margin: 30px 0;
-    padding: 4px;
-    font-size: 130%;
-    border-bottom: 3px solid #4CAF50;
-    color: #4CAF50;
+    overflow: hidden !important;
+    margin: 30px 0 !important;
+    padding: 4px !important;
+    font-size: 20px  !important;
+    border-bottom: 3px solid #4CAF50 !important;
+    color: #4CAF50 !important;
 
 }
 
 .all-rep {
-    overflow: hidden;
-    width: 100%;
-    float: left;
+    overflow: hidden !important;
+    width: 100% !important;
+    float: left !important;
 }
 
 .marko {
-  margin-bottom: 10px;
-  overflow: hidden;
-  background-color: #eee;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  margin-bottom: 10px !important;
+  overflow: hidden !important;
+  background-color: #eee !important;
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
 }
 
 .add-new-comment-title {
-  font-size: 150%;
-  margin-bottom: 10px;
-  padding-bottom: 0px;
+  font-size: 30px  !important;
+  margin-bottom: 10px !important;
+  padding-bottom: 0px !important;
 }
 
 .high-text {
-  color: #000;
-  overflow: hidden;
-  font-weight: normal;
-  font-size: 100%;
-  margin-top: 10px;
+  color: #000 !important;
+  overflow: hidden !important;
+  font-weight: normal !important;
+  font-size: 16px  !important;
+  margin-top: 10px !important;
+}
+
+.highlight { background-color: yellow }
+
+#container {
+ height: 50%  !important;
+
+  float: left  !important;
+  border: 0 !important;
+  float: left !important;
+  border-left: 20px solid #4CAF50 !important;
+  width: 50%  !important;
+  overflow: scroll  !important;
+}
+
+.comment-info-2 {
+  overflow: hidden !important;
+  border-left: 5px solid #4CAF50 !important;
+  margin-bottom: 20px !important;
+  padding-left: 10px !important;
+  margin-bottom: 10px !important;
+  overflow: hidden !important;
+  background-color: #D3F3C8 !important;
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;s
 }
