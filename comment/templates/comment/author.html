@@ -9,20 +9,9 @@
     <h1 class="page-title our-site"> Website Commenting Tool </h1>
 
     <div class="content-area our-site">
-      <form class="input-url" action="" method="post">
-          {% csrf_token %}
-          {{ url.site_url }}
-          <input class="url-submit" type="submit" value="Submit">
-          <div class = "input_username_box">
-            <input id = "input-username-textbox" type="text" placeholder="Your username..">
-          </div>
-          <a class="check-comment-button2" target="_blank" rel="noopener noreferrer" onclick="this.href='/author/'+document.getElementById('input-username-textbox').value">
-              Find your comments
-          </a>
-          <br>
-      </form>
+
       <div class="all-recent-comments">
-          <h2 class="recent-comments-title">Recent comments:</h2>
+          <h2 class="recent-comments-title">User {{ username }}'s comments:</h2>
 
           {% for comment in comments %}
             <form class="comment-div" action="" method="get">
@@ -45,5 +34,6 @@
           {% endfor %}
         </div>
     </div>
+
 </body>
 </html>

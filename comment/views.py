@@ -50,10 +50,8 @@ def comment(request, identify):
         relevant_emails = set()
         comment_email = Comment.objects.get(pk=identify)
         replies_email = Reply.objects.filter(comment_id=identify)
-        # print(comment_email.email)
         relevant_emails.add(comment_email.email)
         for reply_email in replies_email:
-            # print(reply_email.email)
             relevant_emails.add(reply_email.email)
 
         for mail in relevant_emails:
@@ -68,6 +66,7 @@ def comment(request, identify):
 
             Hello,
             You have new activity on comment """ + str(identify) + """.
+            Please check: http://ravon.pythonanywhere.com/comment/""" + str(identify) +"""/
 
             Regards,
             Website Commenting Tool Team"""
@@ -92,3 +91,8 @@ def comment(request, identify):
 
     replies = Reply.objects.filter(comment_id=identify)
     return render(request, 'comment/comment.html', {'comment': comment, 'form': form, 'replies': replies})
+
+
+def author(request, username):
+    comments = Comment.objects.filter(author=username)
+    return render(request, 'comment/author.html', {'comments': comments, 'username': username})

@@ -46,6 +46,21 @@ body#our-site-body {
     font-size: 30px !important;
 }
 
+.input_username_box input[type=text] {
+  overflow: hidden !important;
+  width: 22.5% !important;
+  padding: 12px 20px !important;
+  margin: 5px 77.5% !important;
+  display: inline-block !important;
+  border: 1px solid #ddd !important;
+  border-radius: 4px !important;
+  box-sizing: border-box !important;
+  float: left !important;
+  background-color: #EEEEEE !important;
+  font-size: 12px !important;
+  margin-top: 15px !important;
+}
+
 .input-url input[type=submit] {
     overflow: hidden !important;
     width: 15% !important;
@@ -305,4 +320,26 @@ button:hover {
   background-color: #D3F3C8 !important;
   padding-top: 5px !important;
   padding-bottom: 5px !important;s
+}
+
+.check-comment-button2 {
+  overflow: hidden !important;
+  width: 20% !important;
+  background-color: #4CAF50 !important;
+  color: white !important;
+  padding: 10px 20px !important;
+  margin: 0 !important;
+  border: none !important;
+  border-radius: 4px !important;
+  cursor: pointer !important;
+  float: right !important;
+  font-size: 18px  !important;
+  text-decoration: none !important;
+  text-align: center !important;
+  margin-top: 15px !important;
+}
+
+.mark{
+    background: orange;
+    color: black;
 }

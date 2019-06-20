@@ -27,10 +27,27 @@
                         <script>
                           findString = function findText(text) {
                             window.find(text);
+                            highlightSelection();
                           }
+
+                          function highlightSelection() {
+                              var userSelection = window.getSelection().getRangeAt(0);
+                              highlightRange(userSelection);
+
+                          }
+
+                          function highlightRange(range) {
+                              var newNode = document.createElement("div");
+                              newNode.setAttribute(
+                                 "style",
+                                 "background-color: yellow; display: inline; color: black;"
+                              );
+                              range.surroundContents(newNode);
+                          }
+
                         </script>
                   </div>
-<div class="comment-info-2">
+                  <div class="comment-info-2">
                     <div class="our-site author">
                     {{comment.author}}
                     </div>
@@ -38,7 +55,7 @@
                   <div class="our-site comment-text">
                     {{comment.text}}
                   </div>
-</div>
+                </div>
                   <div class="our-site leave-reply">
                     <form class="our-site leave-reply" action="" method="post">
                       {% csrf_token %}
