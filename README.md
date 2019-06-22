@@ -1,6 +1,5 @@
 # Internship 2019
 
-### Add following commands in terminal:  
-  * source myvenv/bin/activate   
-  * python3 manage.py runserver 8010  
+### Add following command in terminal:  
+  * docker-compose up  
 ### Go to localhost:8010
